@@ -24,12 +24,11 @@ body{
 .btn-sabadin{
     background-color: #a52a2a;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .btn-sabadin:hover{
-    background-color: rgb(235, 235, 235);
+    background-color: #662b12;
+    color: white;
 }
 
 .logo{
