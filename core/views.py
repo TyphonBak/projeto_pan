@@ -79,7 +79,7 @@ def process_config_step(request, process_name, processstep_id):
     context = {
         'form': form,
         'processo': processo,
-        'title': processo.name,
+        'title': processo.name + ' X ' + instance.step.name,
         'tipo': 'editar'
     }
     

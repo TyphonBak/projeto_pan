@@ -26,8 +26,8 @@
         <h3>Lista de Processos</h3>
         <table class="table menu-sabadin">
             <thead>
-                <th>ID</th>
-                <th>Nome</th>
+                <th class="col-xs-4">ID</th>
+                <th class="col-xs-8">Nome</th>
             </thead>
             <tbody>
                 {% for objeto in objetos %}
@@ -44,12 +44,26 @@
         </table>
     </div>
     {% else %}
-    <div class="row">
-        <ul class="list-group col-sm-5">
-            {% for objeto in objetos %}
-            <li class="list-group-item">{{ objeto.id }} / {{ objeto.name }}</li>
-            {% endfor %}
-        </ul>
+    <div class=" col-xs-offset-2 col-xs-8">
+        <h3>Lista de Etapas</h3>
+        <table class="table menu-sabadin">
+            <thead>
+                <th class="col-xs-4">ID</th>
+                <th class="col-xs-8">Nome</th>
+            </thead>
+            <tbody>
+                {% for objeto in objetos %}
+                <tr>
+                    <td>
+                        {{ objeto.id }} 
+                    </td>
+                    <td>
+                       {{ objeto.name }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
     {% endif %}
 {% endif %}
