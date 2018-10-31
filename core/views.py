@@ -79,7 +79,8 @@ def process_config_step(request, process_name, processstep_id):
     context = {
         'form': form,
         'processo': processo,
-        'title': 'Processo'
+        'title': processo.name,
+        'tipo': 'editar'
     }
     
     return render(request, 'process_config_new.html', context)
@@ -101,7 +102,10 @@ def process_config_new(request, process_name):
 
     context = {
         'form': form,
-        'processo': processo
+        'processo': processo,
+        'title': processo.name,
+        'tipo': 'novo',
+        'etapas': Step.objects.all()
     }
 
     return render(request, 'process_config_new.html', context)

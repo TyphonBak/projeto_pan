@@ -3,28 +3,6 @@
 {% block conteudo %}
 
 <h1 class="text-center">{{ title }}</h1>
-<!--
-<div class="container_step">
-    <div class="jumbotron">
-            <div class="form-row">
-                <div class="form-group col-md-2">
-                    <label for="nome">IbIname:</label>
-                    <input type="text" class="form-control" id="nome" placeholder="IbIname">
-                </div>
-                
-                <div class="form-group col-md-6">
-                    <label for="sobrenome">Insira o nome:</label>
-                    <input type="test" class="form-control" id="sobrenome" placeholder="Insira o nome">
-                </div>
-             </div>
-             <div class="containerbtn">
-                 <a class="btn btn-danger btn-lg" href="#" role="button">Voltar</a>
-                 <a class="btn btn-success btn-lg" href="#" role="button">Salvar</a>
-                 
-             </div>
-        </div>
-</div>
--->
 
 <form class="form-horizontal" method="POST">
     {% csrf_token %}
@@ -44,12 +22,26 @@
 
 {% if objetos %}
     {% if title == 'Processo' %}
-    <div class="row">
-        <ul class="list-group col-sm-5">
-            {% for objeto in objetos %}
-            <li class="list-group-item"><a href="{% url 'process_config' objeto.id %}">{{ objeto.id }} / {{ objeto.name }}</a></li>
-            {% endfor %}
-        </ul>
+    <div class=" col-xs-offset-2 col-xs-8">
+        <h3>Lista de Processos</h3>
+        <table class="table menu-sabadin">
+            <thead>
+                <th>ID</th>
+                <th>Nome</th>
+            </thead>
+            <tbody>
+                {% for objeto in objetos %}
+                <tr>
+                    <td>
+                        {{ objeto.id }} 
+                    </td>
+                    <td>
+                        <a href="{% url 'process_config' objeto.id %}">{{ objeto.name }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
     {% else %}
     <div class="row">
