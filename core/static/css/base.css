@@ -10,13 +10,20 @@ body{
 }
 
 .faixa-header{
-    background-color: brown;
-    position: absolute;
+    background-color: #662b12;
     height: 80px;
     width: 100%;
-    top: 70px;
+    top: 135px;
     z-index: -1;
+    position: absolute;
+    display: none;
 
+}
+@media(min-width: 768px){
+    .faixa-header{
+        top: 135px;
+        display: block;
+    }
 }
 
 .btn-sair{
