@@ -12,6 +12,7 @@
                 Etapas
                 <a class="btn btn-success pull-right" href="{% url 'process_config_new' title %}">Adicionar</a>
             </h3>
+            {% if processsteps %}
             <table class="table table-striped_processo texto menu-sabadin">
                 <thead>
                     <tr>
@@ -40,6 +41,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+            <h3 class="bg-info">Nenhuma etapa cadastrada nesse processo.</h3>
+            {% endif %}
         </div>
     </div>
     <div class="pull-right">
