@@ -54,9 +54,12 @@ def process_new(request):
 
 def process_config(request, process_id):
 
+    processo = Process.objects.get(id=process_id)
+
     context = {
-        'processo': Process.objects.get(id=process_id),
-        'processsteps': ProcessStepConfig.objects.all().filter(process=process_id)
+        'processo': processo,
+        'processsteps': ProcessStepConfig.objects.all().filter(process=process_id),
+        'title': processo.name
     }
     
     return render(request, 'process_config.html', context)
@@ -75,7 +78,8 @@ def process_config_step(request, process_name, processstep_id):
 
     context = {
         'form': form,
-        'processo': processo
+        'processo': processo,
+        'title': 'Processo'
     }
     
     return render(request, 'process_config_new.html', context)
