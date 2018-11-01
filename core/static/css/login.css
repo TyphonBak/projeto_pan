@@ -6,13 +6,19 @@ body{
 
 .login-form{
     border-radius: 5px;
-    max-width: 38%;
-    padding: 50px;
+    min-width: 95%;
+    padding: 20px;
     background-color: #e9ddbc;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -60%);
+}
+@media(min-width: 768px){
+    .login-form{
+        min-width: 38%;
+        padding: 50px;
+    }
 }
 
 .login-logo{
