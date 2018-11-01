@@ -1,0 +1,74 @@
+body{
+    background-color: #e9ddbc;
+    position: relative;
+    height: 100vh;
+}
+
+.menu-sabadin{
+    background-color: #662b12;
+    color: white;
+}
+
+.faixa-header{
+    background-color: #662b12;
+    height: 80px;
+    width: 100%;
+    top: 135px;
+    z-index: -1;
+    position: absolute;
+    display: none;
+
+}
+@media(min-width: 768px){
+    .faixa-header{
+        top: 135px;
+        display: block;
+    }
+}
+
+.btn-sair{
+    position: absolute;
+    right: 10px;
+    top: 30px;    
+}
+
+
+.btn-sabadin{
+    background-color: #a52a2a;
+    color: white;
+}
+
+.btn-sabadin:hover{
+    background-color: #662b12;
+    color: white;
+}
+
+.logo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+}
+
+.menu-principal{
+    background-color: #a52a2a;
+    border-radius: 10px;
+}
+
+.menu-principal a{
+    color: white;
+}
+
+.menu-principal a:hover{
+    color: black;
+}
+
+table {
+    margin-top: 10px;    
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
