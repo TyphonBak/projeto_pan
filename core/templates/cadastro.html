@@ -28,17 +28,33 @@
         <h3>Lista de Processos</h3>
         <table class="table menu-sabadin">
             <thead>
-                <th class="col-xs-4">ID</th>
-                <th class="col-xs-8">Nome</th>
+                <th class="col-xs-5">
+                    <div class="col-xs-offset-2">
+                        ID
+                    </div>
+                </th>
+                <th class="col-xs-5">
+                    <div class="col-xs-offset-2">
+                        Nome
+                    </div>
+                </th>
+                <th class="col-xs-2"></th>
             </thead>
             <tbody>
                 {% for objeto in objetos %}
                 <tr>
                     <td>
-                        {{ objeto.id }} 
+                        <div class="col-xs-offset-2">
+                            {{ objeto.id }} 
+                        </div>
                     </td>
                     <td>
-                        <a href="{% url 'process_config' objeto.id %}">{{ objeto.name }}</a>
+                        <div class="col-xs-offset-2">
+                            {{ objeto.name }}
+                        </div>
+                    </td>
+                    <td>
+                        <a href="{% url 'process_config' objeto.id %}" class="btn btn-success btn-sm pull-right">Configurar</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -50,17 +66,29 @@
         <h3>Lista de Etapas</h3>
         <table class="table menu-sabadin">
             <thead>
-                <th class="col-xs-4">ID</th>
-                <th class="col-xs-8">Nome</th>
+                <th class="col-xs-4">
+                    <div class="col-xs-offset-2">
+                        ID
+                    </div>
+                </th>
+                <th class="col-xs-8">
+                    <div class="col-xs-offset-2">
+                        Nome
+                    </div>
+                </th>
             </thead>
             <tbody>
                 {% for objeto in objetos %}
                 <tr>
                     <td>
-                        {{ objeto.id }} 
+                        <div class="col-xs-offset-2">
+                            {{ objeto.id }} 
+                        </div>
                     </td>
                     <td>
-                       {{ objeto.name }}
+                        <div class="col-xs-offset-2">
+                            {{ objeto.name }}
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}
