@@ -73,16 +73,20 @@ def process_config_step(request, process_name, processstep_id):
 
     if request.method == 'POST':
         if form.is_valid():
-            form.save()
+            processform = form.save(commit=False)
+            processform.process = instance.process
+            processform.step = instance.step
+            processform.save()
             return redirect('process_config', processo.id)
 
     context = {
         'form': form,
         'processo': processo,
         'title': processo.name + ' X ' + instance.step.name,
-        'tipo': 'editar'
+        'tipo': 'editar',
+        'instancia': instance
     }
-    
+
     return render(request, 'process_config_new.html', context)
 
 def process_config_new(request, process_name):
@@ -94,6 +98,7 @@ def process_config_new(request, process_name):
         if form.is_valid():
             processform = form.save(commit=False)
             processform.process = processo
+            processform.step = Step.objects.get(id=request.POST.get("step", ""))
             processform.save()
             return redirect('process_config', processo.id)
 

@@ -17,4 +17,4 @@ class ProcessStepConfigForm(forms.ModelForm):
 
     class Meta:
         model = ProcessStepConfig
-        fields = ['step', 'time', 'order', ]
+        fields = ['time', 'order', ]
